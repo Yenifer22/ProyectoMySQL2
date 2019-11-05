@@ -73,10 +73,10 @@ public class MainActivity extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setNavigationIcon(getResources().getDrawable(R.drawable.ic_back));
-        toolbar.setTitleTextColor(getResources().getColor(R.color.mycolor1));
+        toolbar.setTitleTextColor(getResources().getColor(R.color.colorAccent));
         toolbar.setTitleMargin(0, 0, 0, 0);
         toolbar.setSubtitle("CRUD MySQL~2019");
-        toolbar.setSubtitleTextColor(getResources().getColor(R.color.mycolor));
+        toolbar.setSubtitleTextColor(getResources().getColor(R.color.colorAccent));
         toolbar.setTitle("Prof. Gámez");
         setSupportActionBar(toolbar);
 

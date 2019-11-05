@@ -32,7 +32,7 @@ import java.util.Map;
 
 import static android.content.Context.MODE_PRIVATE;
 
-public class MantenimientoMySQL {
+public class MantenimientoMySQL1 {
     /*
         public MantoInterface manto;
         public interface MantoInterface {
@@ -64,7 +64,7 @@ public class MantenimientoMySQL {
     ProductsAdapter adapter;
 
     public void guardar(final Context context, final String codigo, final String descripcion, final String precio){
-        String url = Config.urlGuardar;
+        String url = "http://mjgl.com.sv/mysql_crud/guardar.php";
         //String url = "localhost/democrudsis21a/guardar.php";
         StringRequest request = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {
@@ -80,8 +80,9 @@ public class MantenimientoMySQL {
                             if(estado.equals("1")){
                                 Toast.makeText(context, mensaje, Toast.LENGTH_SHORT).show();
                                 //Toast.makeText(context, "Registro almacenado en MySQL.", Toast.LENGTH_SHORT).show();
-                            }else if(estado.equals("2")){
-                                Toast.makeText(context, ""+mensaje, Toast.LENGTH_SHORT).show();
+                            }else if(mensaje.equals("2")){
+                                Toast.makeText(context, "Error. No se pudo guardar.\n" +
+                                        "Intentelo mas tarde.", Toast.LENGTH_SHORT).show();
                             }
 
                         }catch (JSONException e){
@@ -364,13 +365,19 @@ public class MantenimientoMySQL {
                                datos.setDescripcion(descripcion);
                                datos.setPrecio(Double.parseDouble(precio));
 
+                               //Aca estoy guardando los datos que se obtienen en la consulta desde la base de datos MySQL en
+                                //un archivo xml creado con la clase SharedPreferences.
+                                createfile(context, codigo, descripcion, precio);
+
+                                /*
                                 Intent intent = new Intent(context, MainActivity.class);
                                 intent.putExtra("senal", "1");
                                 intent.putExtra("codigo", codigo.toString());
                                 intent.putExtra("descripcion", descripcion);
                                 intent.putExtra("precio", precio);
-                                //intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                                intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                                 context.startActivity(intent);
+                                 */
 
                                 progressDialog.dismiss();
 
