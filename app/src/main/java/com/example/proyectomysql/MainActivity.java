@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         //y esto para pantalla completa (oculta incluso la barra de estado)
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-
+//
         btnGuardar = (Button) findViewById(R.id.btnGuardar);
         btnConsultar1 = (Button) findViewById(R.id.btnConsultar1);
         btnConsultar2 = (Button) findViewById(R.id.btnConsultar2);
