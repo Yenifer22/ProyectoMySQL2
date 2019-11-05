@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         toolbar.setTitleMargin(0, 0, 0, 0);
         toolbar.setSubtitle("CRUD SQLite");
         toolbar.setSubtitleTextColor(getResources().getColor(R.color.colorAccent));
-        toolbar.setTitle("Luis Reyes");
+        toolbar.setTitle("Yenifer Flores");
         setSupportActionBar(toolbar);
 
         //y esto para pantalla completa (oculta incluso la barra de estado)
